@@ -16,3 +16,6 @@ Here's a rough outline of all the process required
 
 ## Size of sub-image ?
 Size of sub-image affects transform coding performance. Compression ability and computational complexity increases as sub-image size increases making it a double-edged sword. Most popular sub-image sizes are 8x8 and 16x16
+
+# References
+[College of Redwoods](https://www.math.cuhk.edu.hk/~lmlui/dct.pdf)
