@@ -21,30 +21,32 @@ for n in range(0, N-1):
             ) 
          )
 
-
-
-Decompose the 2D DCT into two 1D DCT to save on computation
+C_u is a normalization constant (as is C_v), that have value = 1/sqrt(2) u == 0, else 1
 '''
 import math
 
-def dct2D(in_matrix):
+def dct2D(input_matrix):
     PI = math.pi
-    out_matrix = [[0.0 for _ in range(8)] for _ in range(8)]
+    output_matrix = [[0.0 for _ in range(8)] for _ in range(8)]
 
     for u in range(8):
         for v in range(8):
-            sum_val = 0
+            sum_value = 0
             for x in range(8):
                 for y in range(8):
-                    sum_val += ( in_matrix[x][y] * 
+                    sum_value += ( input_matrix[x][y] * 
                                     math.cos(((2.0 * x + 1) * u * PI) / 16.0) * 
                                     math.cos(((2.0 * y + 1) * v * PI) / 16.0)
                                 )
-            Cu = 1 / math.sqrt(2) if u == 0 else 1
-            Cv = 1 / math.sqrt(2) if v == 0 else 1
+                            
+            # apply normalization constants
+            C_u = 1 / math.sqrt(2) if u == 0 else 1
+            C_v = 1 / math.sqrt(2) if v == 0 else 1
             
-            out_matrix[u][v] = round(1 / 4.0 * Cu * Cv * sum_val, 2)
-        return out_matrix
+            output_matrix[u][v] = round(1 / 4.0 * Cu * Cv * sum_value, 2)
+    return output_matrix
+
+
 
 
 input_matrix = [
