@@ -20,32 +20,23 @@ def RLE(arr):
     # change the splitting criterion as per input scheme
     arr = arr.split(",")
     arr_len = len(arr)
-    encoded_arr = ""
+    encoded_arr = []
     
     count = 1
-    just_processed = ""
 
-    for element in range(arr_len-1):
-        count = 1
-        
+    for element in range(1, arr_len):
+
         # avoid repeated calculations for symbols
-        if just_processed==arr[element]:
-            pass
+        if arr[element]==arr[element-1]:
+            count +=1
 
         else:
-
-            while element != arr_len-1 and ( arr[element] == arr[element+1] ):
-                count+=1
-                element+=1
-                just_processed = arr[element]
-
-        
-            encoded_arr+=str(count)+ arr[element]+ ","
-
-    encoded_arr = encoded_arr[:-1] 
+            encoded_arr.append(f"{count}{arr[element - 1]}")
+            count = 1
+    encoded_arr.append(f"{count}{arr[-1]}")
     return encoded_arr
 
-# sample_arr = "B,B,B,B,B,B,B,B,B,B,G,G,G,G,Y,Y,G,G"
+# sample_arr = "B,B,B,B,B,B,B,B,B,B,G,G,G,G,Y,Y,G,G,L,B,B,B,G"
 # print(RLE(sample_arr))
 
 def huffmann(arr):
