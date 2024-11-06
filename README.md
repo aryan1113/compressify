@@ -19,3 +19,8 @@ Size of sub-image affects transform coding performance. Compression ability and 
 
 # References
 [College of Redwoods](https://www.math.cuhk.edu.hk/~lmlui/dct.pdf)
+
+# Future Scope
+1. Add a logger, to store intermediate results with timestamps, to trace execution flow.
+
+2. Wrap this into a package

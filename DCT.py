@@ -26,6 +26,15 @@ C_u is a normalization constant (as is C_v), that have value = 1/sqrt(2) u == 0,
 import math
 
 def dct2D(input_matrix):
+    '''
+    Calculates the 2D Discrete Cosine Transform of a matrix
+
+    Args: 
+        input_matrix : the matrix to be transformed
+
+    Returns:
+        the 2D Cosine Transform of the matrix
+    '''
     PI = math.pi
     output_matrix = [[0.0 for _ in range(8)] for _ in range(8)]
 
