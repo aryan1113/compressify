@@ -24,3 +24,9 @@ Size of sub-image affects transform coding performance. Compression ability and 
 1. Add a logger, to store intermediate results with timestamps, to trace execution flow.
 
 2. Wrap this into a package
+
+3. Containerize using Docker
+
+4. Deploy on AWS (EC2 as a virtual server, store computational files on a S3 bucket)
+
+5. Create API endpoint

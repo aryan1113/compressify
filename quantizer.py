@@ -32,6 +32,16 @@ def zig_zag_scan(input_matrix):
     computes the zigzag of a quantized block
     input_matrix : quantized matrix
     returns: zigzag vectors in an array
+
+
+    Rules : 
+    1. indices [i,j] at each consecutive scan add up to the same value
+    Ex: [0, 3], [1, 2], [2, 1], [3, 0]
+
+    2. direction of scan alters from down to right
+    After Traversing diagonally upwards, we move towards the right
+    After Traversing diagonally downwards, we move in the down direction
+    
     """
 
     # initializing the variables
